@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30064E53298BAEFE003645F1 /* calories.csv in Resources */ = {isa = PBXBuildFile; fileRef = 30064E52298BAEFE003645F1 /* calories.csv */; };
+		302D05522983207100663517 /* LossOrGain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D05512983207100663517 /* LossOrGain.swift */; };
+		3055ECE029837A8700C63587 /* DesiredGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3055ECDF29837A8700C63587 /* DesiredGoalView.swift */; };
+		3055ECE229837F5F00C63587 /* CalorieIntakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3055ECE129837F5F00C63587 /* CalorieIntakeView.swift */; };
+		3055ECE42985A69A00C63587 /* GenderChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3055ECE32985A69A00C63587 /* GenderChoiceView.swift */; };
+		3055ECE62986C90B00C63587 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3055ECE52986C90B00C63587 /* SplashScreenView.swift */; };
 		30887E62297DFF4D00BFDE55 /* WeightLossApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30887E61297DFF4D00BFDE55 /* WeightLossApp.swift */; };
 		30887E64297DFF4D00BFDE55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30887E63297DFF4D00BFDE55 /* ContentView.swift */; };
 		30887E66297DFF4D00BFDE55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30887E65297DFF4D00BFDE55 /* Assets.xcassets */; };
@@ -14,6 +20,17 @@
 		30887E73297DFF4E00BFDE55 /* WeightLossTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30887E72297DFF4E00BFDE55 /* WeightLossTests.swift */; };
 		30887E7D297DFF4E00BFDE55 /* WeightLossUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30887E7C297DFF4E00BFDE55 /* WeightLossUITests.swift */; };
 		30887E7F297DFF4E00BFDE55 /* WeightLossUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30887E7E297DFF4E00BFDE55 /* WeightLossUITestsLaunchTests.swift */; };
+		30887E8E297E1F9C00BFDE55 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30887E8D297E1F9C00BFDE55 /* LoginView.swift */; };
+		308D1A2C299787E800FE4A5D /* GlobalConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D1A2B299787E800FE4A5D /* GlobalConverter.swift */; };
+		308D1A2F2998C88500FE4A5D /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308D1A2E2998C88500FE4A5D /* Property List.plist */; };
+		308D1A312998C90100FE4A5D /* StorekitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D1A302998C90100FE4A5D /* StorekitManager.swift */; };
+		308D1A332998CBDE00FE4A5D /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D1A322998CBDE00FE4A5D /* PremiumView.swift */; };
+		308D1A372998D24200FE4A5D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308D1A362998D24200FE4A5D /* StoreKit.framework */; };
+		308F91AF298C3F8F00147792 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F91AE298C3F8F00147792 /* SettingsView.swift */; };
+		308F91B1298F773D00147792 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F91B0298F773D00147792 /* TabView.swift */; };
+		308F91B32994FE2700147792 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F91B22994FE2700147792 /* HistoryView.swift */; };
+		30EDECB82989E4FC00727F35 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EDECB72989E4FC00727F35 /* ExerciseView.swift */; };
+		30EDECBC2989E52600727F35 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EDECBB2989E52600727F35 /* MealView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30064E52298BAEFE003645F1 /* calories.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calories.csv; sourceTree = "<group>"; };
+		302D05512983207100663517 /* LossOrGain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LossOrGain.swift; sourceTree = "<group>"; };
+		3055ECDF29837A8700C63587 /* DesiredGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiredGoalView.swift; sourceTree = "<group>"; };
+		3055ECE129837F5F00C63587 /* CalorieIntakeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieIntakeView.swift; sourceTree = "<group>"; };
+		3055ECE32985A69A00C63587 /* GenderChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderChoiceView.swift; sourceTree = "<group>"; };
+		3055ECE52986C90B00C63587 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		30887E5E297DFF4D00BFDE55 /* WeightLoss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightLoss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30887E61297DFF4D00BFDE55 /* WeightLossApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightLossApp.swift; sourceTree = "<group>"; };
 		30887E63297DFF4D00BFDE55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +67,19 @@
 		30887E78297DFF4E00BFDE55 /* WeightLossUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightLossUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30887E7C297DFF4E00BFDE55 /* WeightLossUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightLossUITests.swift; sourceTree = "<group>"; };
 		30887E7E297DFF4E00BFDE55 /* WeightLossUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightLossUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		30887E8D297E1F9C00BFDE55 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		308D1A2B299787E800FE4A5D /* GlobalConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConverter.swift; sourceTree = "<group>"; };
+		308D1A2D2998C6C200FE4A5D /* Product.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Product.storekit; sourceTree = "<group>"; };
+		308D1A2E2998C88500FE4A5D /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		308D1A302998C90100FE4A5D /* StorekitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorekitManager.swift; sourceTree = "<group>"; };
+		308D1A322998CBDE00FE4A5D /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
+		308D1A342998CF9C00FE4A5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		308D1A362998D24200FE4A5D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		308F91AE298C3F8F00147792 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		308F91B0298F773D00147792 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		308F91B22994FE2700147792 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		30EDECB72989E4FC00727F35 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		30EDECBB2989E52600727F35 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				308D1A372998D24200FE4A5D /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +115,7 @@
 				30887E71297DFF4E00BFDE55 /* WeightLossTests */,
 				30887E7B297DFF4E00BFDE55 /* WeightLossUITests */,
 				30887E5F297DFF4D00BFDE55 /* Products */,
+				308D1A352998D24200FE4A5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,9 +132,27 @@
 		30887E60297DFF4D00BFDE55 /* WeightLoss */ = {
 			isa = PBXGroup;
 			children = (
+				308D1A342998CF9C00FE4A5D /* Info.plist */,
 				30887E61297DFF4D00BFDE55 /* WeightLossApp.swift */,
+				30887E8D297E1F9C00BFDE55 /* LoginView.swift */,
 				30887E63297DFF4D00BFDE55 /* ContentView.swift */,
+				3055ECDF29837A8700C63587 /* DesiredGoalView.swift */,
+				3055ECE129837F5F00C63587 /* CalorieIntakeView.swift */,
+				302D05512983207100663517 /* LossOrGain.swift */,
+				3055ECE32985A69A00C63587 /* GenderChoiceView.swift */,
+				3055ECE52986C90B00C63587 /* SplashScreenView.swift */,
+				30EDECBB2989E52600727F35 /* MealView.swift */,
+				308F91AE298C3F8F00147792 /* SettingsView.swift */,
+				308F91B0298F773D00147792 /* TabView.swift */,
+				30EDECB72989E4FC00727F35 /* ExerciseView.swift */,
+				308F91B22994FE2700147792 /* HistoryView.swift */,
+				308D1A2B299787E800FE4A5D /* GlobalConverter.swift */,
+				308D1A302998C90100FE4A5D /* StorekitManager.swift */,
+				308D1A322998CBDE00FE4A5D /* PremiumView.swift */,
+				30064E52298BAEFE003645F1 /* calories.csv */,
 				30887E65297DFF4D00BFDE55 /* Assets.xcassets */,
+				308D1A2D2998C6C200FE4A5D /* Product.storekit */,
+				308D1A2E2998C88500FE4A5D /* Property List.plist */,
 				30887E67297DFF4D00BFDE55 /* Preview Content */,
 			);
 			path = WeightLoss;
@@ -125,6 +181,14 @@
 				30887E7E297DFF4E00BFDE55 /* WeightLossUITestsLaunchTests.swift */,
 			);
 			path = WeightLossUITests;
+			sourceTree = "<group>";
+		};
+		308D1A352998D24200FE4A5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				308D1A362998D24200FE4A5D /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +297,8 @@
 			files = (
 				30887E69297DFF4D00BFDE55 /* Preview Assets.xcassets in Resources */,
 				30887E66297DFF4D00BFDE55 /* Assets.xcassets in Resources */,
+				308D1A2F2998C88500FE4A5D /* Property List.plist in Resources */,
+				30064E53298BAEFE003645F1 /* calories.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +323,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3055ECE229837F5F00C63587 /* CalorieIntakeView.swift in Sources */,
+				308D1A312998C90100FE4A5D /* StorekitManager.swift in Sources */,
+				308D1A2C299787E800FE4A5D /* GlobalConverter.swift in Sources */,
+				302D05522983207100663517 /* LossOrGain.swift in Sources */,
+				30887E8E297E1F9C00BFDE55 /* LoginView.swift in Sources */,
+				30EDECB82989E4FC00727F35 /* ExerciseView.swift in Sources */,
+				308D1A332998CBDE00FE4A5D /* PremiumView.swift in Sources */,
+				308F91B32994FE2700147792 /* HistoryView.swift in Sources */,
 				30887E64297DFF4D00BFDE55 /* ContentView.swift in Sources */,
+				3055ECE42985A69A00C63587 /* GenderChoiceView.swift in Sources */,
 				30887E62297DFF4D00BFDE55 /* WeightLossApp.swift in Sources */,
+				3055ECE029837A8700C63587 /* DesiredGoalView.swift in Sources */,
+				3055ECE62986C90B00C63587 /* SplashScreenView.swift in Sources */,
+				30EDECBC2989E52600727F35 /* MealView.swift in Sources */,
+				308F91B1298F773D00147792 /* TabView.swift in Sources */,
+				308F91AF298C3F8F00147792 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,13 +494,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeightLoss/Preview Content\"";
 				DEVELOPMENT_TEAM = GRRYM4KT64;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = WeightLoss/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -432,6 +513,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.WeInteractive.WeightLoss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -443,13 +525,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeightLoss/Preview Content\"";
-				DEVELOPMENT_TEAM = GRRYM4KT64;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = WeightLoss/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -461,6 +543,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.WeInteractive.WeightLoss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
