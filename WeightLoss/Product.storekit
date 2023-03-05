@@ -1,0 +1,61 @@
+{
+  "identifier" : "4377D9F4",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "5C3EDC2D",
+      "localizations" : [
+
+      ],
+      "name" : "Premium Package",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "9AE60D2E",
+          "introductoryOffer" : {
+            "internalID" : "D083DB34",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "Premium",
+              "displayName" : "Premium",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Premium",
+              "displayName" : "Premium Paket",
+              "locale" : "tr"
+            }
+          ],
+          "productID" : "com.temporary.premium",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "premium",
+          "subscriptionGroupID" : "5C3EDC2D",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

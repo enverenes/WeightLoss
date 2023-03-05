@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+WeightLoss in WeightLoss, no dependencies
+WeightLossTests in WeightLoss, depends on:
+WeightLoss in WeightLoss (explicit)
+WeightLossUITests in WeightLoss, depends on:
+WeightLoss in WeightLoss (explicit)

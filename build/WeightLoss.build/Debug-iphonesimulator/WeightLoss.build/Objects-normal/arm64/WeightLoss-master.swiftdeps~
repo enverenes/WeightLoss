@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "f2e05af918526ea4794e4a5299bffc9749e1f25b1b8b06d172a9c7e7115aa207"
+build_start_time: [1674430828, 260429859]
+build_end_time: [1674430828, 276256084]
+inputs:
+  "/Users/envereneskeskin/Documents/WeightLoss/WeightLoss/ContentView.swift": !private [1674430413, 206697940]
+  "/Users/envereneskeskin/Documents/WeightLoss/WeightLoss/WeightLossApp.swift": !private [1674430413, 204714775]
