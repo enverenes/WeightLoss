@@ -10,7 +10,7 @@ import SwiftUI
 struct RestartView : View {
     
     @Binding var mockCalorie: Int
-    
+    @State private var reset: Int? = 0
     @State var mockCalSpent: Int = 0
     @State var isMock: Bool = true
     
@@ -70,6 +70,7 @@ struct RestartView : View {
         let days : Double = Double(7700 / Double(deficit)) * Double(weightdiff)
         if !isMock{
             totalCalorieToLose = 7700 * weightdiff
+            print(days)
             daysLeft = Int(days.rounded())
             initialDaysLeft =  Int(days.rounded())
         }
@@ -86,50 +87,57 @@ struct RestartView : View {
                         showingSheet = false
                     }
                 } label: {
-                    Image(systemName: "xmark").resizable().scaledToFit().frame(width: 25)
+                    Image(systemName: "xmark").resizable().scaledToFit().frame(width: 25).foregroundColor(Color.main2)
                 }.padding(25)
                 Spacer()
             }
-            Text("Are you sure?").font(.largeTitle).padding()
-            Text("This action will restart your progress")
+            Text("Are you sure?").font(.largeTitle).padding().foregroundColor(Color(.systemGray2))
+            Text("This action will restart your progress").foregroundColor(Color(.systemGray3))
             
-            Spacer()
-            if(loseWeight){
-                if(mockCalorie > Int(mockCalSpent)){
-                    Text("!! Intake must be lower than calorie spent !!").font(.system(size: 20 )).foregroundColor(Color.main3)
-                }else if(Int(calorieGoal) == 0 || mockCalorie == 0){
-                    Text("?? Days").font(.system(size: 20)).foregroundColor(Color.main3)
-                    
-                }else{
-                    
-                    Text("New Goal: \(calculateDays(calSpent: calorieSpent, calIntake: mockCalorie, weightdiff: (Int(weightdifference) ), isMock: isMock)) Days").font(.system(size: 20 )).foregroundColor(Color.main3)
-                }
-                
-            }else{
-                if(mockCalorie < Int(mockCalSpent)){
-                    Text("!! Intake must be higher than calorie spent !!").font(.system(size: 20 )).foregroundColor(Color.main3)
-                }else if(Int(calorieGoal) == 0 || mockCalorie == 0){
-                    Text("?? Days").font(.system(size: 20)).foregroundColor(Color.main3)
-                    
-                }else{
-                    
-                    Text("\(calculateDays(calSpent: mockCalSpent, calIntake: mockCalorie, weightdiff: (Int(weightdifference) ), isMock: isMock)) Days").font(.system(size: 20 )).foregroundColor(Color.main3)
-                }
-                
-            }
             Spacer()
             HStack{
                 
                 
             }
-            NavigationLink(destination: TabViewPage().onAppear{
+            
+            Button {
                 weightdifference = (Int(currentWeight) ?? 0)  - (Int(desiredWeight) ?? 0)
                 calculateDays(calSpent: calorieSpent, calIntake: mockCalorie, weightdiff: (Int(weightdifference) ), isMock: false)
                 daysPassed = 0
-            }) {
+                
+                age = ""
+                height = ""
+                currentWeight = ""
+                selectedItem = "Moderately Active"
+                desiredWeight = ""
+                calorieGoal = ""
+                
+                reset = 1
+            } label: {
+                Text("Restart").frame(width:270).padding(15).background(Color.main2).cornerRadius(15).foregroundColor(Color.white).shadow(radius: 2)
+            }
+
+            NavigationLink(destination: LossOrGain(), tag: 1, selection: $reset) {
+                             
+                             }
+            /* NavigationLink(destination: LossOrGain().onAppear{
+                weightdifference = (Int(currentWeight) ?? 0)  - (Int(desiredWeight) ?? 0)
+                calculateDays(calSpent: calorieSpent, calIntake: mockCalorie, weightdiff: (Int(weightdifference) ), isMock: false)
+                daysPassed = 0
+                
+                age = ""
+                height = ""
+                currentWeight = ""
+                selectedItem = "Moderately Active"
+                desiredWeight = ""
+                calorieGoal = ""
+                
+            })
+             
+              {
                 Text("Restart the progress").font(.system(size: 20))
                     .padding().background(Color.main2).foregroundColor(Color.main3).cornerRadius(15)
-            }
+            } */
                 Spacer()
             }.onAppear{
                 mockCalSpent =  calculateCalSpent(age: Int(age) ?? 0, height: Int(height) ?? 0, currentWeight: Int(currentWeight) ?? 0, activityLevel: activityLevel.firstIndex(of: selectedItem) ?? 1,  isMale: isMale)
@@ -214,57 +222,38 @@ struct RestartView : View {
                         HStack{
                             Text("Age: ").foregroundColor(Color(.systemGray2))
                             Spacer()
-                            TextField(text: $ageSt) {
-                                Text("")
-                            }.multilineTextAlignment(.trailing).foregroundColor(Color(.systemBlue))
+                            Text(ageSt) .multilineTextAlignment(.trailing).foregroundColor(Color(.systemGray2))
                         }
                         
                         HStack{
                             Text("Height: ").foregroundColor(Color(.systemGray2))
                             Spacer()
-                            TextField(text: $heightSt) {
-                                Text("")
-                            }.multilineTextAlignment(.trailing).foregroundColor(Color(.systemBlue))
+                            Text((isEuUnits) ? "\(heightSt) cm" : "\(heightSt) feet") .multilineTextAlignment(.trailing).foregroundColor(Color(.systemGray2))
                         }
                         
                         HStack{
                             Text("Starting Weight: ").foregroundColor(Color(.systemGray2))
                             Spacer()
-                            TextField(text: $currentWeightSt) {
-                                Text("")
-                            }.multilineTextAlignment(.trailing).foregroundColor(Color(.systemBlue))
+                            Text((isEuUnits) ? "\(currentWeightSt) kgs" : "\(currentWeightSt) lbs") .multilineTextAlignment(.trailing).foregroundColor(Color(.systemGray2))
                         }
-                        Picker(selection:  $genderSelection) {
-                            ForEach(genders, id: \.self) { item in // 4
-                                Text(item).foregroundColor(Color(.systemBlue)) // 5
-                            }
-                        } label: {
+                        HStack{
                             Text("Gender: ").foregroundColor(Color(.systemGray2))
-                        }.onChange(of: genderSelection, perform:  { _ in
-                            if genderSelection == "Male"{
-                                isMale = true
-                            }else{
-                                isMale = false
-                            }
-                           })
-                        Menu {
-                            Picker(selection:  $selectedItem) {
-                                ForEach(activityLevel, id: \.self) { item in // 4
-                                    Text(item).font(.largeTitle)// 5
-                                }
-                            } label: {
-                                
-                            }
-                        }label: {
+                            Spacer()
+                            
+                            Text((isMale) ? "Male" : "Female").multilineTextAlignment(.trailing).foregroundColor(Color(.systemGray2))
+                        }
+                           
+                      
+                       
                             HStack{
                                 Text("Activity Level: ").foregroundColor(Color(.systemGray2))
                                 Spacer()
                                 
-                                Text(selectedItem)
+                                Text(selectedItem).multilineTextAlignment(.trailing).foregroundColor(Color(.systemGray2))
                                 
                             }
                             
-                        }
+                        
                         
                         
                         
@@ -278,14 +267,12 @@ struct RestartView : View {
                         HStack{
                             Text("Weight Goal: ").foregroundColor(Color(.systemGray2))
                             Spacer()
-                            TextField(text: $desiredWeightSt) {
-                                Text("")
-                            }.multilineTextAlignment(.trailing).foregroundColor(Color(.systemBlue))
+                            Text(desiredWeightSt).multilineTextAlignment(.trailing).foregroundColor(Color(.systemGray2))
                         }
                         HStack{
                             Text("Calorie Spent: ").foregroundColor(Color(.systemGray2))
                             Spacer()
-                            Text("\(calculateCalSpent(age: Int(ageSt) ?? 0, height: Int(heightSt) ?? 0, currentWeight: Int(currentWeightSt) ?? 0, activityLevel: activityLevel.firstIndex(of: selectedItem) ?? 1,  isMale: isMale))").multilineTextAlignment(.trailing)
+                            Text("\(calculateCalSpent(age: Int(ageSt) ?? 0, height: Int(heightSt) ?? 0, currentWeight: Int(currentWeightSt) ?? 0, activityLevel: activityLevel.firstIndex(of: selectedItem) ?? 1,  isMale: isMale))").multilineTextAlignment(.trailing).foregroundColor(Color(.systemGray2))
                         }
                         
                         
@@ -294,31 +281,18 @@ struct RestartView : View {
                             Spacer()
                             TextField(value: $calorieGoalst, formatter: NumberFormatter()) {
                                 Text("")
-                            }.multilineTextAlignment(.trailing).frame(width: 50).foregroundColor(Color(.systemBlue))
+                            }.multilineTextAlignment(.trailing).frame(width: 50).foregroundColor(Color(.systemGray2)).disabled(true)
                         }
                         
                         HStack{
                             Text("Calorie Deficit: ").foregroundColor(Color(.systemGray2))
                             Spacer()
                             
-                            if loseWeight{
-                                if ((calculateCalSpent(age: Int(ageSt) ?? 0, height: Int(heightSt) ?? 0, currentWeight: Int(currentWeightSt) ?? 0, activityLevel: activityLevel.firstIndex(of: selectedItem) ?? 1,  isMale: isMale) - (Int(calorieGoalst) ))) <= 0 {
-                                    
-                                    Text("Deficit must be positive !")
-                                }else{
-                                    Text("\((calculateCalSpent(age: Int(ageSt) ?? 0, height: Int(heightSt) ?? 0, currentWeight: Int(currentWeightSt) ?? 0, activityLevel: activityLevel.firstIndex(of: selectedItem) ?? 1,  isMale: isMale) - (Int(calorieGoalst) )))").multilineTextAlignment(.trailing)
-                                }
-                            }else{
+                           
+                        Text("\((calculateCalSpent(age: Int(ageSt) ?? 0, height: Int(heightSt) ?? 0, currentWeight: Int(currentWeightSt) ?? 0, activityLevel: activityLevel.firstIndex(of: selectedItem) ?? 1,  isMale: isMale) - (Int(calorieGoalst) )))").multilineTextAlignment(.trailing).foregroundColor(Color(.systemGray2))
                                 
-                                if ((calculateCalSpent(age: Int(ageSt) ?? 0, height: Int(heightSt) ?? 0, currentWeight: Int(currentWeightSt) ?? 0, activityLevel: activityLevel.firstIndex(of: selectedItem) ?? 1,  isMale: isMale) - (Int(calorieGoalst) ))) >= 0 {
-                                    
-                                    Text("Deficit must be negative!")
-                                }else{
-                                    Text("\((calculateCalSpent(age: Int(ageSt) ?? 0, height: Int(heightSt) ?? 0, currentWeight: Int(currentWeightSt) ?? 0, activityLevel: activityLevel.firstIndex(of: selectedItem) ?? 1,  isMale: isMale) - (Int(calorieGoalst) )))").multilineTextAlignment(.trailing)
-                                    
-                                }
                             }
-                        }
+                        
                     } header: {
                         Text("Goals")
                     }

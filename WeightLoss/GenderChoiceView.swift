@@ -11,29 +11,28 @@ struct GenderChoiceView: View {
     @AppStorage("isMale") var isMale : Bool = true
     var body: some View {
         VStack(){
-            Spacer()
+            Spacer().frame(height:150)
             HStack{
                 
                 NavigationLink {
                 LoginView()
                 } label: {
                     VStack{
-                        Image("malegender").resizable().scaledToFit()
-                        Text("Male").padding().foregroundColor(Color.main3)
-                    }.frame(width: 120,height: 200).cornerRadius(15).padding()
+                        Image("erkek").resizable().scaledToFit()
+                        
+                    }.frame(width: 140,height: 200).cornerRadius(15).padding()
                     
                 }.simultaneousGesture(TapGesture().onEnded{
                    isMale = true
                 })
 
-                Spacer().frame(width: 50)
                 NavigationLink {
                 LoginView()
                 } label: {
                     VStack{
-                        Image("femalegender").resizable().scaledToFit()
-                        Text("Female").padding().foregroundColor(Color.main3)
-                    }.frame(width: 120,height: 200).cornerRadius(15).padding()
+                        Image("kiz").resizable().scaledToFit()
+                       
+                    }.frame(width: 140,height: 200).cornerRadius(15).padding()
                     
                 }.simultaneousGesture(TapGesture().onEnded{
                     isMale = false

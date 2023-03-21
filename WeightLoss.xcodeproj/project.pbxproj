@@ -31,6 +31,7 @@
 		308F91B32994FE2700147792 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308F91B22994FE2700147792 /* HistoryView.swift */; };
 		30EDECB82989E4FC00727F35 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EDECB72989E4FC00727F35 /* ExerciseView.swift */; };
 		30EDECBC2989E52600727F35 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EDECBB2989E52600727F35 /* MealView.swift */; };
+		5D90019229CA037F000B839C /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90019129CA037F000B839C /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		308F91B22994FE2700147792 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		30EDECB72989E4FC00727F35 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		30EDECBB2989E52600727F35 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
+		5D90019129CA037F000B839C /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,13 +136,13 @@
 			children = (
 				308D1A342998CF9C00FE4A5D /* Info.plist */,
 				30887E61297DFF4D00BFDE55 /* WeightLossApp.swift */,
+				3055ECE52986C90B00C63587 /* SplashScreenView.swift */,
 				30887E8D297E1F9C00BFDE55 /* LoginView.swift */,
 				30887E63297DFF4D00BFDE55 /* ContentView.swift */,
 				3055ECDF29837A8700C63587 /* DesiredGoalView.swift */,
 				3055ECE129837F5F00C63587 /* CalorieIntakeView.swift */,
 				302D05512983207100663517 /* LossOrGain.swift */,
 				3055ECE32985A69A00C63587 /* GenderChoiceView.swift */,
-				3055ECE52986C90B00C63587 /* SplashScreenView.swift */,
 				30EDECBB2989E52600727F35 /* MealView.swift */,
 				308F91AE298C3F8F00147792 /* SettingsView.swift */,
 				308F91B0298F773D00147792 /* TabView.swift */,
@@ -149,6 +151,7 @@
 				308D1A2B299787E800FE4A5D /* GlobalConverter.swift */,
 				308D1A302998C90100FE4A5D /* StorekitManager.swift */,
 				308D1A322998CBDE00FE4A5D /* PremiumView.swift */,
+				5D90019129CA037F000B839C /* File.swift */,
 				30064E52298BAEFE003645F1 /* calories.csv */,
 				30887E65297DFF4D00BFDE55 /* Assets.xcassets */,
 				308D1A2D2998C6C200FE4A5D /* Product.storekit */,
@@ -334,6 +337,7 @@
 				30887E64297DFF4D00BFDE55 /* ContentView.swift in Sources */,
 				3055ECE42985A69A00C63587 /* GenderChoiceView.swift in Sources */,
 				30887E62297DFF4D00BFDE55 /* WeightLossApp.swift in Sources */,
+				5D90019229CA037F000B839C /* File.swift in Sources */,
 				3055ECE029837A8700C63587 /* DesiredGoalView.swift in Sources */,
 				3055ECE62986C90B00C63587 /* SplashScreenView.swift in Sources */,
 				30EDECBC2989E52600727F35 /* MealView.swift in Sources */,
@@ -504,8 +508,7 @@
 				INFOPLIST_FILE = WeightLoss/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,17 +528,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeightLoss/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y4QX24637P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeightLoss/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

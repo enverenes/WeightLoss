@@ -34,6 +34,7 @@ struct ContentView: View {
   
     @AppStorage("deficit") var deficit : Double = 0.0
     @AppStorage("previousDay") var previousDay = Date()
+    
     @AppStorage("initialDaysLeft") var initialDaysLeft: Int = 0
     @AppStorage("calorieSpent")var calorieSpent: Int = 0
     @AppStorage("calorieGoal") var calorieGoal : String = ""
@@ -55,12 +56,12 @@ struct ContentView: View {
     
     func getDay() {
         let today = Date.now
+        
         let diff = Calendar.current.dateComponents([.day], from: previousDay, to: today).day!
         
         if(diff == 0){
             print("sameday")
         }else{
-            print(diff)
             previousDay = today
             totalCalorieToLose = totalCalorieToLose - (7700 * diff)
             calorieForToday = calorieGoal
@@ -282,6 +283,7 @@ struct ContentView: View {
             .navigationBarBackButtonHidden(true)
             
         }
+        .background(Color(.systemGray6))
             
     }
            

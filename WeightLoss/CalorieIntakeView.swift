@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CalorieIntakeView: View {
+    
+    @ObservedObject var keyboardHeightHelper = KeyboardHeightHelper()
+
     @AppStorage("previousDay") var previousDay = Date()
     @AppStorage("isMale") var isMale : Bool = true
     @AppStorage("loseWeight") var loseWeight: Bool = true
@@ -19,6 +22,9 @@ struct CalorieIntakeView: View {
     @AppStorage("totalCalorieToLose") var totalCalorieToLose : Int = 0
     @AppStorage("initialCalorieToLose") var initialCalorieToLose : Int = 0
     @AppStorage("deficit") var deficit : Double = 0.0
+    
+    @State private var e_calories: String = ""
+    @State private var isEditing = false
     
     func calculateTotalCal(weightdiff: Int) -> Int{
         
@@ -42,62 +48,117 @@ struct CalorieIntakeView: View {
     
     var body: some View {
         
-            VStack{
-                HStack{
-                    Text("Calorie Spent Daily: \(calorieSpent)").font(.title).foregroundColor(Color.main3)
-                    Image(systemName: "flame").foregroundColor(Color.red)
-                }
-                
+        VStack{
+                Spacer()
                 
                 VStack(alignment: .leading){
                     
-                    Text("Your Daily Calorie Intake Goal").foregroundColor(Color.main3)
-                    TextField("Enter Daily Calorie Goal", text: $calorieGoal).keyboardType(.numberPad).multilineTextAlignment(.center)
-                        .font(.title2)
+                    
+                    Text("Calories Burnt Daily").font(.largeTitle).foregroundColor(Color.main3)
+                    HStack {
+                        Group {
+                                  if isEditing {
+                                      HStack {
+                                          TextField("", text: $e_calories)
+                                                          .frame(width: 80, height: 13.5)
+                                                          .font(.title2)
+                                                          .keyboardType(.numberPad)
+                                                          .multilineTextAlignment(.center)
+                                                          .padding(10)
+                                                          .background(
+                                                              RoundedRectangle(cornerRadius: 10)
+                                                                  .strokeBorder(Color.white.opacity(0.5), lineWidth: 1)
+                                                          )
+                                                          .foregroundColor(Color.main3)
+                                                          
+                                          Button("Save") {
+                                              // Handle save button tap here
+                                              calorieSpent = Int(e_calories) ?? calorieSpent
+                                              isEditing = false
+                                          }
+                                          .frame(width:50, height:33)
+                                          .onTapGesture {
+                                              hideKeyboard()
+                                          }
+                                          .background(RoundedRectangle(cornerRadius: 10).fill(Color.main2)
+                                            )
+                                              .foregroundColor(Color.main3)
+                                      }
+                                  }
+                            
+                            
+                            else {
+                                      Text("\(calorieSpent)").font(.title).foregroundColor(Color.main3)
+
+                                      Button(action: {
+                                          isEditing = true
+                                      }) {
+                                          Image(systemName: "square.and.pencil")
+                                              .fontWeight(.heavy).opacity(0.3)
+                                              .foregroundColor(Color.main3)
+                                      }
+                                  }
+                              }
+                    }
+                    
+                    Spacer().frame(height: 50)
+                    
+                    Text("Your Daily Calorie Intake Goal").font(.subheadline).foregroundColor(Color.main3)
+                    ZStack {
+                        
+                        if calorieGoal.isEmpty{
+                            
+                            Text("Enter Daily Calories Goal").opacity(0.3)
+                        }
+                        TextField("Enter Daily Calories Goal", text: $calorieGoal)
+                            
+                    }.font(.title2)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.center)
+                        
                         .padding(10)
                         .background(
                             RoundedRectangle(cornerRadius: 15)
                                 .strokeBorder(Color.white.opacity(0.5), lineWidth: 1))
-                        .frame(width: 300).foregroundColor(Color.main3)
+                    .foregroundColor(Color.main3)
                     
                 }
                 .padding(.top, 100.0)
-                
-                
-                Spacer().frame(height: 100)
+                .frame(width: 300)
+                Spacer().frame(height: 50)
                 
                 if(loseWeight){
                     if(Int(calorieGoal) ?? 0 > Int(calorieSpent)){
-                        Text("!! Intake must be lower than calorie spent !!").font(.system(size: 20 )).foregroundColor(Color.main3)
+                        Text("Intake must be lower than calorie spent!").font(.system(size: 20 )).foregroundColor(Color.main3).frame(width:300, height: 50)
                     }else if(Int(calorieGoal) == 0 || Int(calorieGoal) == nil){
                         Text("?? Days").font(.system(size: 80)).foregroundColor(Color.main3)
                         
                     }else{
                         
-                        Text("\(calculateDays(calIn: Int(calorieGoal) ?? 0 ,calOut: calorieSpent)) Days").font(.system(size: 80 )).foregroundColor(Color.main3)
+                        Text("\(calculateDays(calIn: Int(calorieGoal) ?? 0 ,calOut: calorieSpent)) Days").font(.system(size: 50 )).foregroundColor(Color.main3)
                     }
                     
                 }else{
                     if(Int(calorieGoal) ?? 0 < Int(calorieSpent)){
-                        Text("!! Intake must be higher than calorie spent !!").font(.system(size: 20 )).foregroundColor(Color.main3)
+                        Text("Intake must be higher than calorie spent!").font(.system(size: 20 )).foregroundColor(Color.main3).frame(width:300, height: 50)
                     }else if(Int(calorieGoal) == 0 || Int(calorieGoal) == nil){
                         Text("?? Days").font(.system(size: 80)).foregroundColor(Color.main3)
                         
                     }else{
                         
-                        Text(" Days").font(.system(size: 80 )).foregroundColor(Color.main3)
+                        Text("\(calculateDays(calIn: Int(calorieGoal) ?? 0 ,calOut: calorieSpent)) Days").frame(width:300, height: 50).font(.system(size: 50 )).foregroundColor(Color.main3)
                     }
                     
                 }
                 
                 
                 
-                Spacer().frame(height: 100)
+                Spacer().frame(height: 50)
                 
                 
                 if(loseWeight){
                     NavigationLink(destination: TabViewPage()) {
-                        Text("Start Your Journey").padding(15).background(Color.main2).cornerRadius(15).foregroundColor(Color.main3).shadow(radius: 2)
+                        Text("Start Your Journey").frame(width:270).padding(15).background(Color.main2).cornerRadius(15).foregroundColor(Color.main3).shadow(radius: 2)
                     }.disabled(calorieGoal == "" || (Int(calorieGoal) ?? 0 > Int(calorieSpent))).simultaneousGesture(TapGesture().onEnded{
                         previousDay = .now
                         deficit = (Double(calorieSpent) - (Double(calorieGoal) ?? 0))
@@ -109,7 +170,7 @@ struct CalorieIntakeView: View {
                     
                 }else{
                     NavigationLink(destination: TabViewPage()) {
-                        Text("Start Your Journey").padding(15).background(Color.main2).cornerRadius(15).foregroundColor(Color.main3).shadow(radius: 2)
+                        Text("Start Your Journey").frame(width:270).padding(15).background(Color.main2).cornerRadius(15).foregroundColor(Color.main3).shadow(radius: 2)
                     }.disabled(calorieGoal == "" || (Int(calorieGoal) ?? 0 < Int(calorieSpent)))
                         .simultaneousGesture(TapGesture().onEnded{
                             previousDay = .now
@@ -121,8 +182,14 @@ struct CalorieIntakeView: View {
                 }
                
                 
-                
-            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            Spacer().frame(height: 200)
+            }
+        .onTapGesture {
+            hideKeyboard()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .offset(y: -self.keyboardHeightHelper.keyboardHeight)
+            
             .background(Color.main1)
         .onAppear(){
             

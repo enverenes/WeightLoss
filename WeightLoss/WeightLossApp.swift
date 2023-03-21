@@ -7,7 +7,7 @@
 
 extension UIColor {
   
-    public static var main1 : UIColor {
+   /* public static var main1 : UIColor {
             return UIColor(red: 0/255, green: 61/255, blue: 59/255, alpha: 1.0)
         }
     public static var main2 : UIColor {
@@ -15,8 +15,16 @@ extension UIColor {
         }
     public static var main3 : UIColor {
             return UIColor(red: 161/255, green: 228/255, blue: 85/255, alpha: 1.0)
+        } */
+    public static var main1 : UIColor {
+        return UIColor(red: 40/255, green: 84/255, blue: 48/255, alpha: 1.0)
         }
-   
+    public static var main2 : UIColor {
+            return UIColor(red: 95/255, green: 141/255, blue: 78/255, alpha: 1.0)
+        }
+    public static var main3 : UIColor {
+        return UIColor(red: 229/255, green: 217/255, blue: 182/255, alpha: 1.0)
+        }
     
 }
 
